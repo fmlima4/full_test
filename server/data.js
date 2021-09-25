@@ -1,4 +1,5 @@
-[
+
+module.exports = [
   {
     "_id": "5f1d7f3e5dc58af42fc39242",
     "index": 0,
@@ -4590,3 +4591,4 @@
     "greeting": "Hello, Faye Grant! You have 5 unread messages."
   }
 ]
+

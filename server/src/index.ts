@@ -4,19 +4,25 @@ import { schema } from "./schema"
 import cors from "cors";
 import { createConnection } from "typeorm";
 import {Users} from "./Entities/Users"
+import Data from "../data.js"
 
 const main = async () => {
-    await createConnection({
-        type:"mysql",
-        database: "graphql",
-        username: "root",
-        password: "",
-        logging: true,
-        synchronize: false,
-        entities: [Users]
-    }) 
+    // await createConnection({
+    //     type:"mysql",
+    //     database: "graphql",
+    //     username: "root",
+    //     password: "",
+    //     logging: true,
+    //     synchronize: false,
+    //     entities: [Users]
+    // }) 
 
     const app = express()
+
+    app.get('/users', function(req,res){
+        res.header("Access-Control-Allow-Origin", "*");
+        res.send(Data)
+    })
  
     app.use(cors())
     app.use(express.json())
